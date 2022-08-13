@@ -4,6 +4,7 @@
     <string name="hint_apellidos">Apellidos</string>
     <string name="hint_telefono">Telefono</string>
     <string name="hint_email">Email</string>
+    <string name="hint_cemail">Confirmar Email</string>
     <string name="hint_contrasena">Contraseña</string>
     <string name="hint_negocio">Negocio</string>
     <string name="app_name">mi_plataforma_conectBD</string>
