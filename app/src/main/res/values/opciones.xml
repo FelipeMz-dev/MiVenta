@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tipo_documento">
+        <item>CC</item> <!--Cedula de ciudadanía-->
+        <item>TI</item> <!--Targeta de identidad-->
+        <item>CE</item> <!--Cedula Extrangera-->
+        <item>Pas</item> <!--pasaporte-->
+        <item>Reg</item> <!--Registro civil-->
+        <item>Con</item> <!--Contraseña-->
+        <item>Nit</item> <!--Nit de la empresa-->
+    </string-array>
+
+</resources>
