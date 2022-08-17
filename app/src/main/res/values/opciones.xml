@@ -11,4 +11,12 @@
         <item>Nit</item> <!--Nit de la empresa-->
     </string-array>
 
+    <string-array name="modulos">
+        <item>INVENTARIO</item>
+        <item>COMPRAS</item>
+        <item>VENTAS</item>
+        <item>GASTOS</item>
+        <item>ESTADISTICAS</item>
+    </string-array>
+
 </resources>

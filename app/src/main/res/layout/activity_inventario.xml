@@ -9,9 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="240dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +38,6 @@
                     android:textSize="24sp" />
 
 
-
             </LinearLayout>
 
             <LinearLayout
@@ -63,9 +60,36 @@
                     android:text="Nombre del Usuario"
                     android:textColor="@color/white"
                     android:textSize="24sp" />
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="145dp"
+                    android:layout_height="match_parent" />
             </LinearLayout>
 
+            <Spinner
+                android:id="@+id/spiModulos"
+                android:layout_width="match_parent"
+                android:layout_height="62dp" />
+
         </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
