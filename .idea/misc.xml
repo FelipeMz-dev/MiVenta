@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_actividad_ejercicio002.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_ejercicio001.xml" value="0.17864583333333334" />
         <entry key="app/src/main/res/layout/activity_ingreso.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_inicio.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_inicio_miventa.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_inventario.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_registro.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_registro.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.2" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1995" />
       </map>
