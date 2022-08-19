@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".inventario">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -20,63 +22,116 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/btn_settings"
-                    android:layout_width="128px"
-                    android:layout_height="128px"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="#00FFFFFF"
                     android:contentDescription="boton de ajustes"
-                    tools:src="@drawable/ic_round_dehaze_24" />
+                    android:src="@drawable/ic_round_dehaze_24" />
 
                 <TextView
                     android:id="@+id/txtNombreNegocio"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Nombre del Negocio"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textSize="28sp" />
 
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/btn_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="#00FFFFFF"
                     android:contentDescription="boton de usuario"
-                    tools:src="@drawable/ic_baseline_account_circle_24" />
+                    android:src="@drawable/ic_baseline_account_circle_24"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/txtNombreUsuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="Nombre del Usuario"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
-                <CalendarView
-                    android:id="@+id/calendarView"
-                    android:layout_width="145dp"
-                    android:layout_height="match_parent" />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="01/01/2022"
+                    android:inputType="date"
+                    android:minHeight="48dp"
+                    android:textAlignment="center"
+                    android:textColor="#FFC107"
+                    android:textColorHighlight="#FFC107"
+                    android:textColorHint="#FFC107"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
-            <Spinner
-                android:id="@+id/spiModulos"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="62dp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spiModulos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="selector de modulos"
+                    android:entries="@array/modulos"
+                    android:popupBackground="@color/teal_700"
+                    android:spinnerMode="dropdown" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/editTextTime3"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="01:00 a.m"
+                    android:inputType="time"
+                    android:minHeight="48dp"
+                    android:textAlignment="center"
+                    android:textColor="#FFC107"
+                    android:textColorHighlight="#FFC107"
+                    android:textColorHint="#FFC107"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <ScrollView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:background="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,11 +140,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
             </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        style=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:contentDescription="btnAdd"
+        android:foreground="@drawable/ic_round_add_24"
+        app:backgroundTint="@color/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

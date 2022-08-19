@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,10 +33,11 @@ import java.util.Map;
 public class Registro extends AppCompatActivity implements View.OnClickListener{
 
     EditText id_doc, nombres, apellidos, telefono, email, contrasena;
-    Button btn_registrar;
+    Button btn_registrar, btn_b1, btn_b2, btn_b3;
     ImageButton btn_atras_r;
     TextView textoError;
     Spinner spinner_documento;
+    LinearLayout paso1, paso2, paso3;
 
     RequestQueue requestQueue;
 
@@ -54,6 +56,9 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
 
         btn_registrar.setOnClickListener(this);
         btn_atras_r.setOnClickListener(this);
+        btn_b1.setOnClickListener(this);
+        btn_b2.setOnClickListener(this);
+        btn_b3.setOnClickListener(this);
 
     }
     private void initUI(){                      //llamar las etiqueteas de la vista
@@ -68,6 +73,13 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
 
         btn_registrar = findViewById(R.id.btn_registrar);
         btn_atras_r = findViewById(R.id.btn_atras_r);
+        btn_b1 = findViewById(R.id.btn_b1);
+        btn_b2 = findViewById(R.id.btn_b2);
+        btn_b3 = findViewById(R.id.btn_b3);
+
+        paso1 = findViewById(R.id.paso1);
+        paso2 = findViewById(R.id.paso2);
+        paso3 = findViewById(R.id.paso3);
     }
 
     @Override
@@ -80,6 +92,34 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
 
         }else if (id == R.id.btn_atras_r){
             startActivity(new Intent(Registro.this, Inicio.class));
+
+        }else if (id == R.id.btn_b1){
+            if (!btn_b1.isEnabled()){
+                btn_b1.setEnabled(true);
+                btn_b2.setEnabled(false);
+                btn_b3.setEnabled(false);
+                paso1.setVisibility(View.VISIBLE);
+                paso2.setVisibility(View.GONE);
+                paso3.setVisibility(View.GONE);
+            }
+        }else if (id == R.id.btn_b2){
+            if (!btn_b2.isEnabled()){
+                btn_b1.setEnabled(false);
+                btn_b2.setEnabled(true);
+                btn_b3.setEnabled(false);
+                paso1.setVisibility(View.GONE);
+                paso2.setVisibility(View.VISIBLE);
+                paso3.setVisibility(View.GONE);
+            }
+        }else if (id == R.id.btn_b3){
+            if (!btn_b3.isEnabled()){
+                btn_b1.setEnabled(false);
+                btn_b2.setEnabled(false);
+                btn_b3.setEnabled(true);
+                paso1.setVisibility(View.GONE);
+                paso2.setVisibility(View.GONE);
+                paso3.setVisibility(View.VISIBLE);
+            }
         }
 
     }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fadeScrollbars="false"
     android:isScrollContainer="false"
     android:keepScreenOn="false"
@@ -62,8 +63,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <ImageButton
@@ -74,14 +75,14 @@
                     android:background="@drawable/ic_baseline_lens_24"
                     android:backgroundTint="@color/teal_700"
                     android:tint="@android:color/white"
-                    app:srcCompat="?attr/actionModeCloseDrawable"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_24"
                     tools:ignore="UseAppTint,SpeakableTextPresentCheck" />
 
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="244dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="64px"
+                    android:layout_marginStart="22dp"
                     android:layout_marginTop="29dp"
                     android:fontFamily="serif"
                     android:text="Registro"
@@ -97,13 +98,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:orientation="vertical"
-                android:visibility="gone"
+                android:visibility="visible"
                 tools:ignore="MissingConstraints">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32px"
                     android:fontFamily="serif"
                     android:text="Documento:"
                     android:textColor="@color/black"
@@ -113,6 +113,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:orientation="horizontal">
 
                     <Spinner
@@ -174,13 +175,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:orientation="vertical"
-                android:visibility="visible"
+                android:visibility="gone"
                 tools:ignore="MissingConstraints">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32px"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="serif"
                     android:text="Telefono:"
                     android:textColor="@color/black"
@@ -214,7 +215,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="80px"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="serif"
                     android:text="Correo Electronico:"
                     android:textColor="@color/black"
@@ -225,7 +226,7 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32px"
+                    android:layout_marginTop="16dp"
                     android:ems="10"
                     android:hint="@string/hint_email"
                     android:inputType="textPersonName"
@@ -236,7 +237,7 @@
                     android:id="@+id/confirmar_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32px"
+                    android:layout_marginTop="16dp"
                     android:ems="10"
                     android:hint="@string/hint_cemail"
                     android:inputType="textPersonName"
@@ -257,36 +258,29 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32px"
                     android:fontFamily="serif"
                     android:text="Contraseña:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <LinearLayout
+                <EditText
+                    android:id="@+id/contrasena"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/contrasena"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="@string/hint_contrasena"
-                        android:inputType="number"
-                        android:textSize="20sp"
-                        tools:ignore="TouchTargetSizeCheck" />
-
-                </LinearLayout>
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:hint="@string/hint_contrasena"
+                    android:inputType="number"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck" />
 
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32px"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="serif"
                     android:text="Confirmar Contraseña:"
                     android:textColor="@color/black"
@@ -297,7 +291,7 @@
                     android:id="@+id/confirmar_contrasena"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32px"
+                    android:layout_marginTop="16dp"
                     android:ems="10"
                     android:hint="@string/hint_contrasena"
                     android:inputType="textPersonName"
@@ -310,15 +304,15 @@
                 android:id="@+id/btn_registrar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120px"
-                android:layout_marginBottom="32px"
+                android:layout_marginTop="64dp"
+                android:layout_marginBottom="16dp"
                 android:fontFamily="serif"
                 android:text="SIGUIENTE"
                 android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="78dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -326,7 +320,7 @@
                     android:id="@+id/btn_b1"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_margin="32px"
+                    android:layout_margin="16dp"
                     android:background="@drawable/ic_baseline_lens_24"
                     android:fontFamily="serif"
                     android:text="1"
@@ -335,12 +329,12 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/btn_b"
+                    android:id="@+id/btn_b2"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_margin="32px"
+                    android:layout_margin="16dp"
                     android:background="@drawable/ic_baseline_lens_24"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:fontFamily="serif"
                     android:text="2"
                     android:textAlignment="center"
@@ -348,12 +342,12 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/btn_b2"
+                    android:id="@+id/btn_b3"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_margin="32px"
+                    android:layout_margin="16dp"
                     android:background="@drawable/ic_baseline_lens_24"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:fontFamily="serif"
                     android:text="3"
                     android:textAlignment="center"

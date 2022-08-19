@@ -51,8 +51,9 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener{
         if (id == R.id.btn_atras_i){
             startActivity(new Intent(Ingreso.this, Inicio.class));
         }else if (id == R.id.btn_ingresar){
-            verificar(user.getText().toString().trim(), pass.getText().toString().trim());
+            //verificar(user.getText().toString().trim(), pass.getText().toString().trim());
             //pass.setText(user.getText().toString().trim());
+            startActivity(new Intent(Ingreso.this, inventario.class));
         }
     }
     private void verificar(String _user, String _pass){
