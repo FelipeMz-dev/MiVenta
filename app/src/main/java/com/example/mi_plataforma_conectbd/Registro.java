@@ -41,7 +41,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
 
     RequestQueue requestQueue;
 
-    private static final String url_regUser = "http://192.168.53.195/mi_plataforma/insertar.php";
+    private static final String url_regUser = "http://192.168.222.38/mi_plataforma/insertar.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         requestQueue = Volley.newRequestQueue(this);
         initUI();
 
-        spinner_documento = (Spinner) findViewById(R.id.spinner_pais);
+        spinner_documento = (Spinner) findViewById(R.id.spinner_documento);
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.tipo_documento, android.R.layout.simple_spinner_item);
         spinner_documento.setAdapter(adapter);
 
@@ -62,14 +62,14 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
 
     }
     private void initUI(){                      //llamar las etiqueteas de la vista
-        /*id_doc = findViewById(R.id.id_doc);
+        id_doc = findViewById(R.id.id_doc);
         nombres = findViewById(R.id.nombres);
         apellidos = findViewById(R.id.apellidos);
         telefono = findViewById(R.id.telefono);
         email = findViewById(R.id.email);
         contrasena = findViewById(R.id.contrasena);
 
-        textoError = findViewById(R.id.textView3);*/
+        textoError = findViewById(R.id.textView3);
 
         btn_registrar = findViewById(R.id.btn_registrar);
         btn_atras_r = findViewById(R.id.btn_atras_r);
@@ -94,32 +94,35 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
             startActivity(new Intent(Registro.this, Inicio.class));
 
         }else if (id == R.id.btn_b1){
-            if (!btn_b1.isEnabled()){
+            //Toast.makeText(this,"Presionado boton 1", Toast.LENGTH_SHORT).show();
+            /*if (!btn_b1.isEnabled()){
                 btn_b1.setEnabled(true);
                 btn_b2.setEnabled(false);
-                btn_b3.setEnabled(false);
+                btn_b3.setEnabled(false);*/
                 paso1.setVisibility(View.VISIBLE);
                 paso2.setVisibility(View.GONE);
                 paso3.setVisibility(View.GONE);
-            }
+            //}
         }else if (id == R.id.btn_b2){
-            if (!btn_b2.isEnabled()){
+            //Toast.makeText(this,"Presionado boton 2", Toast.LENGTH_SHORT).show();
+            /*if (!btn_b2.isEnabled()){
                 btn_b1.setEnabled(false);
                 btn_b2.setEnabled(true);
-                btn_b3.setEnabled(false);
+                btn_b3.setEnabled(false);*/
                 paso1.setVisibility(View.GONE);
                 paso2.setVisibility(View.VISIBLE);
                 paso3.setVisibility(View.GONE);
-            }
+            //}
         }else if (id == R.id.btn_b3){
-            if (!btn_b3.isEnabled()){
+            //Toast.makeText(this,"Presionado boton 3", Toast.LENGTH_SHORT).show();
+            /*if (!btn_b3.isEnabled()){
                 btn_b1.setEnabled(false);
                 btn_b2.setEnabled(false);
-                btn_b3.setEnabled(true);
+                btn_b3.setEnabled(true);*/
                 paso1.setVisibility(View.GONE);
                 paso2.setVisibility(View.GONE);
                 paso3.setVisibility(View.VISIBLE);
-            }
+            //}
         }
 
     }

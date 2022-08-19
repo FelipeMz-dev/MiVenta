@@ -9,11 +9,11 @@
     <string name="hint_negocio">Negocio</string>
     <string name="app_name">mi_plataforma_conectBD</string>
     <string name="administra_tu_negocio">Administra tu negocio</string>
-    <string name="iniciar_sesi_n">Iniciar Sesión:</string>
+    <string name="iniciar_sesi_n">INICIAR SESIÓN</string>
     <string name="ingresar">Ingresar</string>
     <string name="registrar">Registrar</string>
     <string name="boton_de_atras">boton de atras</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_2">Tab 2</string>    
 </resources>

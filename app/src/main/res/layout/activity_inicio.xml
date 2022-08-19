@@ -36,6 +36,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="serif"
                 android:text="Gestiona tu negocio"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
@@ -51,13 +52,15 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="254dp"
+        android:layout_width="300dp"
         android:layout_height="49dp"
         android:layout_marginTop="65dp"
+        android:fontFamily="serif"
         android:text="@string/iniciar_sesi_n"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,11 +68,13 @@
 
     <Button
         android:id="@+id/btn_ingresar"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
+        android:fontFamily="serif"
         android:text="@string/ingresar"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,46 +82,44 @@
 
     <Button
         android:id="@+id/btn_registrar"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:fontFamily="serif"
         android:text="@string/registrar"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_ingresar" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="120px"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="46dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/instagram" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="120px"
+        android:layout_marginBottom="46dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/facebook" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="120px"
+        android:layout_marginBottom="46dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/whatsapp" />

@@ -49,6 +49,7 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="serif"
                         android:text="Gestiona tu negocio"
                         android:textColor="@color/white"
                         android:textSize="24sp" />
@@ -118,6 +119,7 @@
 
                     <Spinner
                         android:id="@+id/spinner_documento"
+                        style="@android:style/Widget.Material.Light.Spinner.Underlined"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:spinnerMode="dialog"
@@ -138,7 +140,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="80px"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="serif"
                     android:text="Nombres y Apellidos:"
                     android:textColor="@color/black"
@@ -149,7 +151,7 @@
                     android:id="@+id/nombres"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32px"
+                    android:layout_marginTop="16dp"
                     android:ems="10"
                     android:hint="@string/hint_nombres"
                     android:inputType="textPersonName"
@@ -160,7 +162,8 @@
                     android:id="@+id/apellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32px"
+                    android:layout_marginTop="16dp"
+                    android:elegantTextHeight="true"
                     android:ems="10"
                     android:hint="@string/hint_apellidos"
                     android:inputType="textPersonName"
@@ -181,7 +184,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
                     android:fontFamily="serif"
                     android:text="Telefono:"
                     android:textColor="@color/black"
@@ -191,10 +193,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:orientation="horizontal">
 
                     <Spinner
                         android:id="@+id/spinner_pais"
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:spinnerMode="dialog"
@@ -300,60 +304,67 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_registrar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="serif"
-                android:text="SIGUIENTE"
-                android:textSize="20sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btn_b1"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/ic_baseline_lens_24"
+                    android:id="@+id/btn_registrar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="serif"
-                    android:text="1"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:text="SIGUIENTE"
+                    android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/btn_b2"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/ic_baseline_lens_24"
-                    android:enabled="true"
-                    android:fontFamily="serif"
-                    android:text="2"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btn_b3"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/ic_baseline_lens_24"
-                    android:enabled="true"
-                    android:fontFamily="serif"
-                    android:text="3"
-                    android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/btn_b1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/ic_baseline_lens_24"
+                        android:fontFamily="serif"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
+                    <Button
+                        android:id="@+id/btn_b2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/ic_baseline_lens_24"
+                        android:enabled="true"
+                        android:fontFamily="serif"
+                        android:text="2"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_b3"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/ic_baseline_lens_24"
+                        android:enabled="true"
+                        android:fontFamily="serif"
+                        android:text="3"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
