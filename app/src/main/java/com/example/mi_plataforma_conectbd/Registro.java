@@ -36,7 +36,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
     Button btn_registrar, btn_b1, btn_b2, btn_b3;
     ImageButton btn_atras_r;
     TextView textoError;
-    Spinner spinner_documento;
+    Spinner spinner_documento, spinner_pais;
     LinearLayout paso1, paso2, paso3;
 
     RequestQueue requestQueue;
@@ -47,13 +47,21 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        // cargar la bilbioteca volley----------------------------------------------------
         requestQueue = Volley.newRequestQueue(this);
-        initUI();
 
+        initUI(); //iniciar el metodo que carga los botones-------------------------------
+
+        //cargar los spinner de la vista------------------------------------------------------
+        spinner_pais = (Spinner) findViewById(R.id.spinner_document);
+        ArrayAdapter<CharSequence> adapter1=ArrayAdapter.createFromResource(this, R.array.pais, android.R.layout.simple_spinner_item);
+        spinner_pais.setAdapter(adapter1);
         spinner_documento = (Spinner) findViewById(R.id.spinner_documento);
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.tipo_documento, android.R.layout.simple_spinner_item);
-        spinner_documento.setAdapter(adapter);
+        ArrayAdapter<CharSequence> adapter2=ArrayAdapter.createFromResource(this, R.array.tipo_documento, android.R.layout.simple_spinner_item);
+        spinner_documento.setAdapter(adapter2);
 
+        //cargar el click de los botones-------------------------------------------------------
         btn_registrar.setOnClickListener(this);
         btn_atras_r.setOnClickListener(this);
         btn_b1.setOnClickListener(this);
@@ -61,7 +69,8 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         btn_b3.setOnClickListener(this);
 
     }
-    private void initUI(){                      //llamar las etiqueteas de la vista
+    //metodo que carga los botones\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    private void initUI(){
         id_doc = findViewById(R.id.id_doc);
         nombres = findViewById(R.id.nombres);
         apellidos = findViewById(R.id.apellidos);
@@ -80,10 +89,10 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         paso1 = findViewById(R.id.paso1);
         paso2 = findViewById(R.id.paso2);
         paso3 = findViewById(R.id.paso3);
-    }
+    } /////////////////////////////////////////////////////////////////////////////////
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v) { //metodo OnClick para los botones_____________________________
         int id = v.getId();
 
         if (id == R.id.btn_registrar){
@@ -125,7 +134,11 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
             //}
         }
 
-    }
+    } ////////////////////////////////////////////////////////////////////////////////////////
+
+    /* a continuacion se hace la conexion con XAMPP
+       primero se validan los datos que se van a enviar de la vista
+       luego utilizando el metodo POST se envian al XAMPP */
     public void validarDatos(){
         String doc = id_doc.getText().toString().trim();
         String nom = nombres.getText().toString().trim();
@@ -134,7 +147,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         String ema = email.getText().toString().trim();
         String con = contrasena.getText().toString().trim();
 
-        //filtros te textos
+        //filtros te textos--------------------------------------------------------------------
         if (doc.length() < 8){
             if (doc.length() == 0){
                 textoError.setText("el campo Documento está vacio");
@@ -165,8 +178,8 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
             if (con.matches("[+-]?\\d*(\\.\\d+)?") && con.length() <= 10){
                 int docNum = Integer.parseInt(doc);
                 int conNum = Integer.parseInt(con);
-                if (docNum == conNum){
-                    textoError.setText("El Usuario y la contraseña son iguales"); //si el documento y la contraseña son iguales se filtra
+                if (docNum == conNum){   //si el documento y la contraseña son iguales se filtra
+                    textoError.setText("El Usuario y la contraseña son iguales");
                 }else {
                     textoError.setTextColor(Color.GREEN);
                     textoError.setText("Datos correctos");
@@ -174,16 +187,24 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
                 }
             }
 
-        }
+        } //Hasta aqui se hace el filtro de los datos de registro---------------------------------
 
     }
-    private void validarUsuario(String doc){ //validar si el usuario ya existe
+    private void validarUsuario(String doc){ //validar si el usuario ya existe____________________________
         String url_verifUser = "http://192.168.53.195/mi_plataforma/usuarios_consulta.php?id_doc="+ doc;
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
                 url_verifUser,
                 null,
                 new Response.Listener<JSONObject>() {
+
+                    /*Validacion
+                    * una vez se confirme que el usuario ya existe
+                    * se termina el proceso y se deja un mensajer de alerta
+                    * de lo contrario al dar error
+                    * se continua con el proceso de registro.
+                    * */
+
                     @Override
                     public void onResponse(JSONObject response) {
                         textoError.setText("El Usuario ya esta registrado");
@@ -203,6 +224,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         );
         requestQueue.add(jsonObjectRequest);
     }
+    // una vez se filtraron los datos se procede con el registro::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     private void registrarUsuario(final String doc, final String nom, final String ape, final String tel, final String ema, final String con){
 
         StringRequest stringRequest = new StringRequest(
@@ -217,7 +239,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(Registro.this, "Error de Registro", Toast.LENGTH_SHORT).show();
                     }
                 }
         ){
@@ -226,6 +248,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
 
+                // por medio de un map se envian los datos al XAMPP
                 params.put("id_doc", doc);
                 params.put("nombres", nom);
                 params.put("apellidos", ape);

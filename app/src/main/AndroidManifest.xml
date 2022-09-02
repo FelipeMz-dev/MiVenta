@@ -12,14 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mi_plataforma_conectBD"
         android:usesCleartextTraffic="true" >
+
         <activity
             android:name=".inventario"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.Mi_plataforma_conectBD.NoActionBar" />
         <activity
             android:name=".Ingreso"
             android:exported="true" />

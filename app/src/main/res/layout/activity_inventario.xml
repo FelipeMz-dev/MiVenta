@@ -27,66 +27,22 @@
 
                 <ImageButton
                     android:id="@+id/btn_settings"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="#00FFFFFF"
-                    android:contentDescription="boton de ajustes"
-                    android:src="@drawable/ic_round_dehaze_24" />
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/ic_round_dehaze_24"
+                    android:contentDescription="boton de ajustes" />
 
                 <TextView
                     android:id="@+id/txtNombreNegocio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="serif"
                     android:text="Nombre del Negocio"
-                    android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="28sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/btn_user"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="#00FFFFFF"
-                    android:contentDescription="boton de usuario"
-                    android:src="@drawable/ic_baseline_account_circle_24"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <TextView
-                    android:id="@+id/txtNombreUsuario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre del Usuario"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <EditText
-                    android:id="@+id/editTextDate"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="01/01/2022"
-                    android:inputType="date"
-                    android:minHeight="48dp"
-                    android:textAlignment="center"
-                    android:textColor="#FFC107"
-                    android:textColorHighlight="#FFC107"
-                    android:textColorHint="#FFC107"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
+
 
             </LinearLayout>
 
@@ -95,55 +51,110 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <Spinner
-                    android:id="@+id/spiModulos"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:contentDescription="selector de modulos"
-                    android:entries="@array/modulos"
-                    android:popupBackground="@color/teal_700"
-                    android:spinnerMode="dropdown" />
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/btn_user"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/ic_baseline_account_circle_24"
+                            android:contentDescription="boton de usuario"
+                            android:scaleType="center"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <TextView
+                            android:id="@+id/txtNombreUsuario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif"
+                            android:gravity="center|start"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:text="Nombre del Usuario"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/spiModulos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="#00FFFFFF"
+                            android:contentDescription="selector de modulos"
+                            android:spinnerMode="dropdown" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                    </LinearLayout>
+                </LinearLayout>
 
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_height="wrap_content" />
 
-                <EditText
-                    android:id="@+id/editTextTime3"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="01:00 a.m"
-                    android:inputType="time"
-                    android:minHeight="48dp"
-                    android:textAlignment="center"
-                    android:textColor="#FFC107"
-                    android:textColorHighlight="#FFC107"
-                    android:textColorHint="#FFC107"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <Button
+                        android:id="@+id/btnDate"
+                        android:layout_width="134dp"
+                        android:layout_height="48dp"
+                        android:text="01/12/2022"
+                        android:textColor="#FFEB3B"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="1dp" />
+
+                    <Button
+                        android:id="@+id/btnHour"
+                        android:layout_width="134dp"
+                        android:layout_height="48dp"
+                        android:text="12:00 a.m"
+                        android:textColor="#FFEB3B"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="1dp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:background="#00FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpeakableTextPresentCheck">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-            </LinearLayout>
-        </ScrollView>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.mi_plataforma_conectbd.inventarioFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

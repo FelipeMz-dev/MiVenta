@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,6 +28,7 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener{
     EditText user, pass;
     Button btn_ingresar;
     ImageButton btn_atras_i;
+    Spinner spinner_document;
 
     RequestQueue requestQueue;
 
@@ -44,6 +47,10 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener{
 
         btn_ingresar.setOnClickListener(this);
         btn_atras_i.setOnClickListener(this);
+
+        spinner_document = (Spinner) findViewById(R.id.spinner_document);
+        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.tipo_documento, android.R.layout.simple_spinner_item);
+        spinner_document.setAdapter(adapter);
     }
     @Override
     public void onClick(View v) {
